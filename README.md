@@ -1,53 +1,82 @@
-# Biomechanics Motion and Analysis System for Boxing
+# 🥊 AI Boxing Technique Analyzer
 
-## Overview
+An intelligent **Computer Vision based boxing analysis system** that compares a user's boxing movements with a professional/reference boxer using pose estimation and frame-by-frame motion analysis.
 
-This is a computer vision-powered boxing technique analyzer built with Streamlit that helps user improve their boxing form. The application uses MediaPipe pose estimation to analyze boxing movements in real-time, comparing user techniques against professional reference poses. It provides detailed feedback on form, accuracy scores, and technique improvement suggestions for common boxing punches (jab, cross, hook, uppercut)
+The system helps users improve technique by measuring posture, punch form, body rotation, joint alignment, and movement similarity using AI-powered analytics.
 
-## User Preferences
+---
 
-Preffered communication style: Simple, everyday language.
+## 🚀 Project Overview
 
-## System Architecture
+This project uses **Python, OpenCV, MediaPipe, NumPy, and Streamlit** to analyze boxing videos.
 
-### Frontend Architecture
-- **Framework**: Streamlit web application with wide layout configuration
-- **Interface Design**: Multi-column layout with expandable sidebar for analysis settings
-- **Real-time Visualization**: Plotly-based interactive charts for performance metrics and technique analysis
-- **Video Processing UI**: Upload interface with progress tracking and ETA display for video analysis
-- **Feedback System**: Color-coded accuracy indicators and detailed technique improvement suggestions
+Users upload:
 
-### Core Processing Pipeline
-- **Pose Estimation**: MediaPipe-based computer vision system optimized for upper body boxing movements
-- **Video Processing**: Frame extraciton with configurable frame rates(5-15 FPS) and maximum frame limits for performance
-- **Technique Analysis**: Rule-based system comparing user poses against professional reference angles
-- **Performance Monitoring**: Built-in timing and memory usage tracking with optimization features
+- 🎯 Reference Boxing Video (Professional form)
+- 👤 User Boxing Video
 
-### Data Architecture
-- **Pose Data Structure**: Dictionary-based landmark storage with calculated joint angles and body rotation metrics
-- **Reference System**: Pre-computed professional boxing pose templates with angle tolerances and scoring weights
-- **Analysis Pipeline**: Multi-stage comparison system with weighted scoring for different technique aspects
-- **Session Management**: Streamlit session state for maintaining analyze instances and user data
+The system processes both videos, extracts body landmarks, compares movement patterns, and generates:
 
-### Performance Optimizations
-- **Frame Rate Control**: Adjustable processing speeds to balance accuracy and performance
-- **Memory Management**: Frame limiting (150 max frames) and temporary file cleanup
-- **Model Complexity**: MediaPipe model complexity set to 1 for optimal speed / accuracy balance
-- **Image Processing**: Optimized frame preprocessing for pose detection accuracy
+✅ Similarity Score  
+✅ Joint-wise Analysis  
+✅ Frame-by-Frame Comparison  
+✅ Performance Rating  
+✅ Technique Improvement Feedback
 
-## External Dependencies
+---
 
-### Computer Vision & ML
-- **MediaPipe**: Google's machine learning framework for pose estimation and landmark detection
-- **OpenCV (cv2)**: Video processing, frame manipulation, and computer vision operations
-- **NumPy**: Mathematical operations for pose analysis and angle calculations
+## 🎯 Key Features
 
-### Web Framework & Visualization
-- **Streamlit**: Main web application framework with built-in UI components
-- **Plotly**: Interactive data visualization for performance charts and analysis results
-- **PIL (Pillow)**: Image processing and format conversion utilities
+### 📹 1. Side-by-Side Video Comparison
+Compare professional boxer vs user performance visually.
 
-### Data Processing
-- **Pandas**: Data structure management for analysis results and performance metrics
-- **TempFile/OS**: Temporary file handling for video uploads and processing
-- **PSUtil**: System performance monitoring (optional dependency for memory tracking)
+### 🦴 2. Pose Estimation
+Detects body keypoints such as:
+
+- Shoulder  
+- Elbow  
+- Wrist  
+- Hip  
+- Knee  
+- Torso Rotation
+
+### 📊 3. Joint Similarity Scoring
+Measures movement similarity for:
+
+- Left Elbow Angle  
+- Right Elbow Angle  
+- Shoulder Angles  
+- Punch Extension  
+- Body Rotation
+
+### 🎞️ 4. Frame-by-Frame Analysis
+Compare user form against reference frame at specific moments.
+
+### ⭐ 5. Overall Quality Rating
+Performance labels like:
+
+- Excellent  
+- Good  
+- Average  
+- Needs Improvement
+
+---
+
+# 🖼️ Project Screenshots
+
+## 🔹 Main Dashboard
+<img width="1160" height="461" alt="WhatsApp Image 2026-04-22 at 07 12 12" src="https://github.com/user-attachments/assets/80fd3901-3140-4676-bb11-56145aea79a3" />
+
+
+---
+
+## 🔹 Comparison Results
+<img width="1600" height="780" alt="WhatsApp Image 2026-04-22 at 07 12 13 (1)" src="https://github.com/user-attachments/assets/eb8f61fe-4de4-4daa-ae06-faa744f243de" />
+
+
+---
+
+## 🔹 Frame-by-Frame Analysis
+<img width="1600" height="782" alt="WhatsApp Image 2026-04-22 at 07 12 13" src="https://github.com/user-attachments/assets/6601c1f6-c9ea-4032-8482-fc96e9e655d4" />
+
+
